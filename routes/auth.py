@@ -35,7 +35,7 @@ def register():
             email=form.email.data,
             password=hashed_password
         )
-        # Add the new user to the databas
+        # Add the new user to the database
         db.session.add(new_user)
         db.session.commit()
         # Flash a success message

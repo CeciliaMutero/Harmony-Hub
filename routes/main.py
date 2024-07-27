@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 from flask import Blueprint, render_template, request
+from flask_login import login_required
 from models.song import Song
 
 
@@ -11,6 +12,12 @@ main = Blueprint('main', __name__)
 def home():
     """Returns the homepage"""
     return render_template('index.html')
+
+
+@main.route('/profile')
+@login_required
+def profile():
+    return f'Hello, {current_user.username}!'
 
 
 @main.route('/recommendations')

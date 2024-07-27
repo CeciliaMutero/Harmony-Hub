@@ -7,6 +7,7 @@ from models.song import db
 from config import Config
 from flask_login import LoginManager
 from models.user import User
+from routes.auth import auth
 
 
 app = Flask(__name__)
@@ -18,7 +19,7 @@ db.init_app(app)
 # Set up Flask-Login
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view = 'main.login'
+login_manager.login_view = 'auth.login'
 
 
 @login_manager.user_loader
@@ -44,6 +45,7 @@ def load_user(user_id):
 
 
 app.register_blueprint(main)
+app.register_blueprint(auth, url_prefix='/auth')
 
 
 @app.route('/')
