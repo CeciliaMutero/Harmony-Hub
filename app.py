@@ -1,13 +1,9 @@
-#!/usr/bin/python3
-
+#!/home/ubuntu/venv/bin/python
 
 from flask import Flask
-from routes.main import main
-from models.song import db
 from config import Config
 from flask_login import LoginManager
-from models.user import User
-from routes.auth import auth
+from models import db, User
 
 
 app = Flask(__name__)
@@ -42,6 +38,10 @@ def load_user(user_id):
     """
 
     return User.query.get(int(user_id))
+
+
+from routes.main import main
+from routes.auth import auth
 
 
 app.register_blueprint(main)

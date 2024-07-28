@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 
-from flask_sqlalchemy import SQLAlchemy
-
-
-db = SQLAlchemy()
+from models import db
 
 
 class Song(db.Model):

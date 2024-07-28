@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-from flask import Blueprint, render_template, request
-from flask_login import login_required
+from flask import Blueprint, render_template, request, url_for, redirect
+from flask_login import login_required, current_user
 from models.song import Song
 
 
@@ -42,4 +42,5 @@ def rate():
     """Rate a song."""
     song_id = request.form.get('song_id')
     rating = request.form.get('rating')
+    flash('Your rating has been submitted!', 'success')
     return redirect(url_for('main.recommendations'))

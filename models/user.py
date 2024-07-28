@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 
-from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
+from models import db
 
 
-db = SQLAlchemy()
-
-
-class User(db.model):
+class User(UserMixin, db.Model):
     """User model for authentication."""
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(150), unique=True, nullable=False)
