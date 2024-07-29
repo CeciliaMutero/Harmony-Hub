@@ -3,7 +3,7 @@
 Harmony Hub is a sophisticated music recommender system designed to provide personalized song recommendations, enable users to search for songs, and create and manage playlists. Leveraging advanced algorithms and a user-friendly interface, Harmony Hub aims to enhance your music listening experience.
 # Authors:
 Cecilia Mutero
-Your Name
+
 # Installation
 To set up the project locally, follow these steps:
 
